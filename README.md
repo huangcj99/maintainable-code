@@ -27,11 +27,11 @@ Function.prototype.before = function () {
 	return function () {
 		if ( !validataFunc.apply(this,arguments) ) {
 			console.log("有错误,不允许提交表单");
-      //提交表单若失败，则return不进行表单提交			
-      return;
+		        //提交表单若失败，则return不进行表单提交			
+		        return;
 		}
 		return _self.apply(this,arguments);
-    }
+        }
 };
 
 //验证表单函数,部分代码省略
@@ -41,9 +41,9 @@ let validataFunc = function () {
 
 	//给验证器添加验证方法
 	validator.addMethod($usr[0],"isNonEmpty","请填写账户名");
-  ...
+  	...
   
-  //执行加入到验证器的方法并接收返回的msg
+  	//执行加入到验证器的方法并接收返回的msg
 	let msg = validator.formValidated();
 
 	//判断是否存在msg错误信息，没有则执行表单提交将表单数据post上服务器
@@ -53,8 +53,8 @@ let validataFunc = function () {
 			$usr.val("");
 			$usr_msg.html(msg);
 		}
-    ...
-    return false;
+    		...
+    		return false;
 	}
 	else {
 		return true;
